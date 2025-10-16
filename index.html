@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Finance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Student Finance Tracker</h1>
+    <nav aria-label="Main navigation">
+      <button class="nav-tab active" data-tab="dashboard">Dashboard</button>
+      <button class="nav-tab" data-tab="records">Records</button>
+      <button class="nav-tab" data-tab="add-form">Add Record</button>
+      <button class="nav-tab" data-tab="settings">Currency</button>
+      <button class="nav-tab" data-tab="about">About</button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Dashboard -->
+    <section id="dashboard" class="page-section active-section" aria-labelledby="dashboard-heading">
+      <h2 id="dashboard-heading">Dashboard</h2>
+      <div class="stats" aria-live="polite" id="stats-live"></div>
+    </section>
+
+    <!-- Records -->
+    <section id="records" class="page-section" aria-labelledby="records-heading">
+      <h2 id="records-heading">Your Records</h2>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search records..." aria-label="Search records" />
+        <label>
+          <input type="checkbox" id="case-sensitive" /> Case-sensitive
+        </label>
+      </div>
+      <div id="records-container"></div>
+    </section>
+
+    <!-- Add/Edit Form -->
+    <section id="add-form" class="page-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Add New Record</h2>
+      <form id="record-form">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" required />
+          <span class="error" id="desc-error"></span>
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <div class="radio-group">
+            <label><input type="radio" name="type" value="expense" checked /> Expense</label>
+            <label><input type="radio" name="type" value="income" /> Income</label>
+          </div>
+          <span class="error" id="type-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="text" id="amount" required />
+          <span class="error" id="amount-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="">Select</option>
+            <option value="Food">Food</option>
+            <option value="Education">Education</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error" id="cat-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="date">Date (YYYY-MM-DD)</label>
+          <input type="text" id="date" required placeholder="2025-10-16" />
+          <span class="error" id="date-error"></span>
+        </div>
+        <button type="submit">Save Record</button>
+        <button type="button" id="cancel-edit" style="display:none;">Cancel Edit</button>
+      </form>
+    </section>
+
+    <!-- Settings (Currency Only) -->
+    <section id="settings" class="page-section" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Currency Settings</h2>
+      <div class="form-group">
+        <label for="base-currency">Base Currency</label>
+        <select id="base-currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="rate-eur">1 USD = ? EUR</label>
+        <input type="number" id="rate-eur" step="0.0001" value="0.93" />
+      </div>
+      <div class="form-group">
+        <label for="rate-gbp">1 USD = ? GBP</label>
+        <input type="number" id="rate-gbp" step="0.0001" value="0.79" />
+      </div>
+      <p class="help-text">All amounts will be displayed in your base currency.</p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="page-section" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Track your student income and expenses in one place.</p>
+      <p>GitHub: <a href="https://github.com/TetaCindy" target="_blank">your-username</a></p>
+      <p>Email: c.teta@alustudent.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Student Finance Tracker</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
