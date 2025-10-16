@@ -241,6 +241,18 @@ button:hover {
   }
 }
 
+.page-section{
+  text-align: center;
+}
+.page-section h2{
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.page-section p{
+  font-size: 1rem;
+}
+
+
 /* Footer */
 footer {
   background: #343a40;
