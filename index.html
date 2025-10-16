@@ -42,45 +42,47 @@
     <!-- Add/Edit Form -->
     <section id="add-form" class="page-section" aria-labelledby="form-heading">
       <h2 id="form-heading">Add New Record</h2>
-      <form id="record-form">
-        <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" id="description" required />
-          <span class="error" id="desc-error"></span>
-        </div>
-        <div class="form-group">
-          <label>Type</label>
-          <div class="radio-group">
-            <label><input type="radio" name="type" value="expense" checked /> Expense</label>
-            <label><input type="radio" name="type" value="income" /> Income</label>
+      <div class="form-container">
+        <form id="record-form">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" required />
+            <span class="error" id="desc-error"></span>
           </div>
-          <span class="error" id="type-error"></span>
-        </div>
-        <div class="form-group">
-          <label for="amount">Amount</label>
-          <input type="text" id="amount" required />
-          <span class="error" id="amount-error"></span>
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category" required>
-            <option value="">Select</option>
-            <option value="Food">Food</option>
-            <option value="Education">Education</option>
-            <option value="Transport">Transport</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Other">Other</option>
-          </select>
-          <span class="error" id="cat-error"></span>
-        </div>
-        <div class="form-group">
-          <label for="date">Date (YYYY-MM-DD)</label>
-          <input type="text" id="date" required placeholder="2025-10-16" />
-          <span class="error" id="date-error"></span>
-        </div>
-        <button type="submit">Save Record</button>
-        <button type="button" id="cancel-edit" style="display:none;">Cancel Edit</button>
-      </form>
+          <div class="form-group">
+            <label>Type</label>
+            <div class="radio-group">
+              <label><input type="radio" name="type" value="expense" checked /> Expense</label>
+              <label><input type="radio" name="type" value="income" /> Income</label>
+            </div>
+            <span class="error" id="type-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" required />
+            <span class="error" id="amount-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="">Select</option>
+              <option value="Food">Food</option>
+              <option value="Education">Education</option>
+              <option value="Transport">Transport</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error" id="cat-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="date">Date (YYYY-MM-DD)</label>
+            <input type="text" id="date" required placeholder="2025-10-16" />
+            <span class="error" id="date-error"></span>
+          </div>
+          <button type="submit">Save Record</button>
+          <button type="button" id="cancel-edit" style="display:none;">Cancel Edit</button>
+        </form>
+      </div>
     </section>
 
     <!-- Settings (Currency Only) -->
@@ -111,7 +113,7 @@
       <p>Track your student income and expenses in one place.</p>
       <h2>Contact</h2>
       <p><strong>GitHub:</strong> <a href="https://github.com/TetaCindy" target="_blank">TetaCindy</a></p>
-      <p><strong></strong>Email: c.teta@alustudent.com</p>
+      <p><strong>Email:</strong> c.teta@alustudent.com</p>
     </section>
   </main>
 
